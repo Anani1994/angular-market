@@ -16,3 +16,5 @@ yarn-error.log*
 
 # custom setting
 NOTES.md*
+/market/
+index.html*
