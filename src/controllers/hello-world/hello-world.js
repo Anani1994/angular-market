@@ -1,3 +1,4 @@
+import('./hello-world.less');
 module.exports = function (App) {
     App.directive('helloWorld', function () {
         return {

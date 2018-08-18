@@ -16,11 +16,26 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.pug$/,
+                use: [
+                    'pug-loader'
+                ]
+            },
+            {
                 test: /\.css$/,
                 use: [
                     'style-loader',
                     'css-loader',
                     'postcss-loader'
+                ]
+            },
+            {
+                test: /\.less/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'less-loader'
                 ]
             }
         ]
@@ -34,7 +49,7 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             filename: 'index.html',
-            template: 'index.html',
+            template: 'index.pug',
             inject: true
         }),
         new webpack.ProvidePlugin({
