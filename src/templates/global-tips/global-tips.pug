@@ -1,8 +1,6 @@
 .global-tips(ng-class="slideClass")
-    .toggle-tips(ng-click="startSlide()" ng-if="'slide-to-right' === slideClass") 关
-    .toggle-tips(ng-click="startSlide()" ng-if="'slide-to-right' !== slideClass") 开
+    .toggle-tips(ng-click="startSlide()")
     .tips-body
         .tips-title {{tipsTitle}}
         .tips-content {{tipsContent}}
-        .tips-footer
-            a(ng-href="{{tipsHref}}") {{tipsFooter}}
+        a(ng-href="{{tipsHref}}") {{tipsFooter}}

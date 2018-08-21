@@ -60,8 +60,9 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            filename: 'index.html',
             template: 'index.pug',
+            favicon: path.resolve('icon.png'),
+            filename: 'index.html',
             inject: true
         }),
         new webpack.ProvidePlugin({
