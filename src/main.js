@@ -2,8 +2,8 @@
 import './styles/common/common.less';
 // 引入自定义的动画
 import './styles/animates/animates.less';
-// 引入 bootstrap 的 css 文件
-import 'bootstrap/dist/css/bootstrap.min.css';
+// 引入 bootstrap 的 less 文件
+import 'bootstrap/bootstrap.less';
 // 引入angular
 import Angular from 'angular';
 // 定义一个angular模块
