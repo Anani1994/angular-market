@@ -16,6 +16,12 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.html/,
+                use: [
+                    'html-loader'
+                ]
+            },
+            {
                 test: /\.pug$/,
                 use: [
                     'pug-loader'
@@ -36,6 +42,15 @@ module.exports = {
                     'css-loader',
                     'postcss-loader',
                     'less-loader'
+                ]
+            },
+            {
+                test: /\.(scss)$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
                 ]
             },
             {

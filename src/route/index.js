@@ -1,29 +1,27 @@
-module.exports = function (App) {
-    // App.config(['$routeProvider', function ($routeProvider) {
-    //     $routeProvider
-    //         .when('/', {
-    //             // 路径问题
-    //             // templateUrl: absolute/path 建议改成 template: require('relative/path')
-    //             template: require('../views/jade/login/login.pug')
-    //         }).when('/index', {
-    //             template: require('../views/jade/index/index.pug')
-    //     }).otherwise({redirectTo: '/index'});
-    // }]);
-    App.config(['$stateProvider', function ($stateProvider) {
-        $stateProvider
-            .state('app', {
-                url: '/',
+import indexTemp from '../views/jade/index/test.html';
+import loginTemp from '../views/jade/login/login.pug';
 
-            })
-            .state('app.index', {
-                url: '/index',
-                templateUrl: '../views/jade/index/index.html'
-    
-            })
-            .state('app.login', {
-                url: '/login',
-                templateUrl: '../views/jade/login/login.html'
-    
-            });
-    }]);
+function router ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+        .state('login', {
+            url: '/login',
+            template: '<h1>My Contacts</h1>',
+            controller: function ($scope) {
+                $scope.title = 'My Contacts';
+            }
+
+        })
+        .state('index', {
+            url: '/index',
+            template: indexTemp,
+            controller: function ($scope) {
+                $scope.title = 'My Contacts';
+            }
+        });
+
+    $urlRouterProvider.otherwise('/');
 }
+
+router.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+export default router;
