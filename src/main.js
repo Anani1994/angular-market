@@ -38,6 +38,3 @@ App.run(function ($rootScope, $state) {
 });
 // 配置路由
 App.config(router);
-
-// 引入自定义的指令文件
-require('./templates/global-tips/global-tips.js')(App);
