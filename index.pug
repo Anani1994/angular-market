@@ -6,18 +6,4 @@ html(lang="en" ng-app="app")
         meta(http-equiv="X-UA-Compatible" content="ie=edge")
         title 商城
     body
-        //- div(ng-view)
-        header.fixed-top
-            nav.navbar.navbar-expand-lg.navbar-light.bg-light
-                ul.navbar-nav
-                    li.nav-item
-                        a.nav-link(ui-sref="login") 登录
-                    li.nav-item
-                        a.nav-link(ui-sref="index") 主页
-        main.container.pt-56
-            <div ui-view=""></div>
-
-style.
-    .pt-56 {
-        padding-top: 56px;
-    }
+        .container-fluid(ui-view)
