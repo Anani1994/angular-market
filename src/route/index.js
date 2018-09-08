@@ -1,6 +1,6 @@
 // 引入 pug
-import indexTemp from '../views/jade/index/index.pug';
-import loginTemp from '../views/jade/login/login.pug';
+import indexTemp from '../views/jade/index.pug';
+import loginTemp from '../views/jade/login.pug';
 // 引入 controller
 import loginCtrl from '../views/js/controllers/login.js';
 
@@ -16,7 +16,7 @@ function router ($stateProvider, $urlRouterProvider) {
         .state('login', {
             url: '/login',
             template: loginTemp,
-            controller: loginCtrl
+            controller: ['$scope', loginCtrl]
         }).state('page-404', {
             url: '/page-404',
             template: 'loginTemp',

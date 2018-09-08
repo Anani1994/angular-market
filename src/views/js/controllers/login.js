@@ -1,6 +1,6 @@
 function loginCtrl ($scope, $state) {
     $scope.testText = 'is login?';
-    $scope.toIndex = function () {
+    $scope.toIndex = () => {
         localStorage.isLogin = true;
         $state.go('app');
     }

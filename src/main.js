@@ -15,6 +15,7 @@ import animate from 'angular-animate';
 // import uiBootstrap from 'angular-ui-bootstrap/ui-bootstrap';
 // 引入 angular-ui-router
 import uiRoute from 'angular-ui-router';
+
 // 引入路由配置
 import router from './route/index.js';
 /*
@@ -26,7 +27,7 @@ window.$ = $;
 let App = Angular.module('app', [animate, uiRoute]);
 window.App = App;
 // run 方法在 angular 加载后执行一次
-App.run(function ($rootScope, $state) {
+App.run(['$rootScope', '$state', function ($rootScope, $state) {
     // 检测用户是否已登录
     $rootScope.$on('$stateChangeStart', function (event, to, toParams, froms, fromParams) {
         // 如果用户未登录
@@ -35,6 +36,6 @@ App.run(function ($rootScope, $state) {
             $state.go('login'); //跳转到登录界面
         }
     });
-});
+}]);
 // 配置路由
-App.config(router);
+App.config(['$stateProvider', '$urlRouterProvider', router]);
