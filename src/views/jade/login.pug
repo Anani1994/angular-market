@@ -1,3 +1,18 @@
-div {{testText}}
-div 我是登录界面
-div(ng-click="toIndex()") 登录
+.login
+    a(href="https://github.com/Anani1994/angular-market")
+        img(style="position: fixed; top: 0; right: 0; border: 0;", src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png", alt="Fork me on GitHub")
+    .container-fluid.h-100
+        .row.h-100.justify-content-center.align-items-center
+            .col-lg-4
+                form(name="login")
+                    .form-group.row
+                        label.col-lg-2.col-form-label(for="username") 账户：
+                        .col-lg-9
+                            input.form-control(id="username", type="text", placeholder="请输入您的账户")
+                    .form-group.row
+                        label.col-lg-2.col-form-label(for="password") 密码：
+                        .col-lg-9
+                            input.form-control(id="password", type="password", placeholder="请输入您的密码")
+                    .form-group.row
+                        .col-lg-9.offset-lg-2
+                            button.btn.btn-primary.btn-block(type="submit") 登录
