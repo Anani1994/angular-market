@@ -1,8 +1,10 @@
-function loginCtrl ($scope, $state) {
-    $scope.testText = 'is login?';
+function loginCtrl ($scope, $state, $timeout) {
     $scope.toIndex = () => {
-        localStorage.isLogin = true;
-        $state.go('app');
+        $timeout(() => {
+            localStorage.isLogin = true;
+            console.log($scope.username, $scope.password);
+            $state.go('app');
+        })
     }
 }
 

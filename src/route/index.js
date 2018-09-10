@@ -16,7 +16,7 @@ function router ($stateProvider, $urlRouterProvider) {
         .state('login', {
             url: '/login',
             template: loginTemp,
-            controller: ['$scope', loginCtrl]
+            controller: ['$scope', '$state', '$timeout', loginCtrl]
         }).state('page-404', {
             url: '/page-404',
             template: 'loginTemp',

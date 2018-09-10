@@ -4,15 +4,41 @@
     .container-fluid.h-100
         .row.h-100.justify-content-center.align-items-center
             .col-lg-4
-                form(name="login")
+                form(
+                    name="loginForm"
+                    ng-submit="toIndex()")
                     .form-group.row
                         label.col-lg-2.col-form-label(for="username") 账户：
                         .col-lg-9
-                            input.form-control(id="username", type="text", placeholder="请输入您的账户")
+                            input.form-control(
+                                id="username"
+                                name="username"
+                                type="text"
+                                ng-model="username"
+                                placeholder="请输入您的账户"
+                                required
+                                ng-minlength="6"
+                                ng-maxlength="16"
+                                ng-class="{'border border-danger': loginForm.username.$invalid && loginForm.username.$touched}")
+                            .text-danger(ng-if="loginForm.username.$error.required && loginForm.username.$touched") 账户不能为空，请输入您的账户。
+                            .text-danger(ng-if="loginForm.username.$error.minlength || loginForm.username.$error.maxlength && loginForm.username.$touched") 账户长度在 6 到 16 位之间。
                     .form-group.row
                         label.col-lg-2.col-form-label(for="password") 密码：
                         .col-lg-9
-                            input.form-control(id="password", type="password", placeholder="请输入您的密码")
+                            input.form-control(
+                                id="password"
+                                name="password"
+                                type="password"
+                                ng-model="password"
+                                placeholder="请输入您的密码"
+                                required
+                                ng-minlength="6"
+                                ng-maxlength="16"
+                                ng-class="{'border border-danger': loginForm.password.$invalid && loginForm.password.$touched}")
+                            .text-danger(ng-if="loginForm.password.$error.required && loginForm.password.$touched") 密码不能为空，请输入您的密码。
+                            .text-danger(ng-if="loginForm.password.$error.minlength || loginForm.password.$error.maxlength && loginForm.password.$touched") 密码长度在 6 到 16 位之间。
                     .form-group.row
                         .col-lg-9.offset-lg-2
-                            button.btn.btn-primary.btn-block(type="submit") 登录
+                            button.btn.btn-primary.btn-block(
+                                type="submit"
+                                ng-disabled="loginForm.$invalid") 登录
