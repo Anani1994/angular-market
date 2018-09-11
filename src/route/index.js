@@ -5,6 +5,7 @@ import loginTemp from '../views/jade/login.pug';
 import loginCtrl from '../views/js/controllers/login.js';
 
 function router ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.when('', '/index');
     $stateProvider
         .state('app', {
             url: '/index',
@@ -17,7 +18,8 @@ function router ($stateProvider, $urlRouterProvider) {
             url: '/login',
             template: loginTemp,
             controller: ['$scope', '$state', '$timeout', loginCtrl]
-        }).state('page-404', {
+        })
+        .state('page-404', {
             url: '/page-404',
             template: 'loginTemp',
             controller: function ($scope) {
